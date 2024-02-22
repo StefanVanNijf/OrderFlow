@@ -1,0 +1,112 @@
+/* Extra CSS in public/css/menu.css */
+
+/* Standaard stijlen resetten */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.header {
+    background-color: #000;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+}
+
+.shopping-cart-icon {
+    cursor: pointer;
+    text-align: right; /* Winkelwagentje naar rechts */
+    font-size: 24px; /* Grootte van het winkelwagen symbool */
+    /* Toevoegen van klikbare link stijlen indien gewenst */
+}
+
+.menu-title {
+    flex-grow: 1; /* Zorgt ervoor dat het Menu naar links wordt geduwd */
+    text-align: left;
+}
+.qr-message {
+    display: block; /* Zorgt ervoor dat het een eigen regel neemt */
+    margin: 20px auto; /* Centreert de melding */
+    background-color: #4CAF50; /* Groene achtergrond */
+    color: white;
+    padding: 10px;
+    border-radius: 20px; /* Maakt de hoeken minder rond */
+    font-size: 1rem;
+    width: fit-content;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.category-header {
+    background-color: #eee;
+    padding: 5px 15px;
+    margin: 10px -20px;
+    font-weight: bold;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.item-name {
+    font-weight: bold;
+}
+
+.item-description {
+    color: #666;
+    margin: 5px 0;
+}
+
+.item-price {
+    font-weight: bold;
+    color: #333;
+}
+
+.add-item-btn {
+    background-color: #5cb85c; /* Groene kleur */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 4px 6px;    font-size: 1rem;
+    border-radius: 50%; /* Maakt de knop rond */
+    margin-left: 20px;
+}
+
+.add-item-btn:hover {
+    background-color: #449d44; /* Donkerdere groene kleur voor hover effect */
+}
+
+.footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.8rem;
+}
