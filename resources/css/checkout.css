@@ -1,0 +1,64 @@
+/* checkout.css */
+
+.container {
+    background-color: #fff;
+    border-radius: 4px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.container h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.order-items {
+    margin-bottom: 30px;
+}
+
+.order-items .item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.checkout-button {
+    text-align: center;
+}
+
+.checkout-button button {
+    background-color: #5cb85c; /* Groene kleur */
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.checkout-button button:hover {
+    background-color: #449d44; /* Donkerdere groene kleur bij hover */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+}

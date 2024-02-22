@@ -11,4 +11,6 @@ class MenuController extends Controller
         $categories = MenuCategory::with('menuItems')->get();
         return view('menu.index', compact('categories'));
     }
+
+    
 }

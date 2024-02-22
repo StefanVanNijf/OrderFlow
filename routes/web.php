@@ -19,3 +19,9 @@ Route::get('/', function () {
 
 // De menu route moet buiten de closure van de hoofdpagina staan.
 Route::get('/menu', [MenuController::class, 'index']);
+
+Route::get('/menu/afrekenen', function () {
+    return view('menu.afrekenen');
+});
+
+Route::post('/menu/betalen', [MenuController::class, 'storeOrder']);

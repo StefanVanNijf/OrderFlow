@@ -27,17 +27,68 @@ body, html {
     padding: 10px 5%;
 }
 
-.shopping-cart-icon {
-    cursor: pointer;
-    text-align: right; /* Winkelwagentje naar rechts */
-    font-size: 24px; /* Grootte van het winkelwagen symbool */
-    /* Toevoegen van klikbare link stijlen indien gewenst */
-}
-
 .menu-title {
     flex-grow: 1; /* Zorgt ervoor dat het Menu naar links wordt geduwd */
     text-align: left;
 }
+
+.shopping-cart-icon {
+    cursor: pointer;
+    font-size: 24px; /* Grootte van het winkelwagen symbool */
+    position: relative; /* Nodig voor de positionering van de cart-panel */
+}
+
+.cart-count {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0 5px;
+    font-size: 0.7rem;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+}
+
+.cart-container {
+    display: inline-block;
+    position: relative;
+}
+
+.cart-panel {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #000000;
+    min-width: 200px;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    border-radius: 5px; /* Licht afgeronde hoeken voor het paneel */
+}
+
+.cart-panel ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-panel li {
+    padding: 5px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-panel li:last-child {
+    border-bottom: none; /* Verwijdert de border van de laatste li */
+}
+
+/* Hover effect voor het winkelwagentje */
+.cart-container:hover .cart-panel {
+    display: block;
+}
+
 .qr-message {
     display: block; /* Zorgt ervoor dat het een eigen regel neemt */
     margin: 20px auto; /* Centreert de melding */
@@ -91,9 +142,11 @@ body, html {
     color: white;
     border: none;
     cursor: pointer;
-    padding: 4px 6px;    font-size: 1rem;
-    border-radius: 50%; /* Maakt de knop rond */
+    padding: 0px 5px; /* Verhoog de padding voor een grotere knop */
+    font-size: 1.4rem; /* Vergroot het + teken */
+    border-radius: 50%; /* Maakt de knop volledig rond */
     margin-left: 20px;
+    transition: background-color 0.3s ease; /* Voegt een overgangseffect toe */
 }
 
 .add-item-btn:hover {
