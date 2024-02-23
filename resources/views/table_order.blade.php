@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    @livewire('check-location')
+<h3>Tafel {{ $table->id }}</h3>
+@livewire('check-location')
 @endsection

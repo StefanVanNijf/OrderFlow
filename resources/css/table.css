@@ -3,14 +3,15 @@
 
 .error-message {
     border: 1px solid #ff0000;
-    background-color: #ffe5e5; 
-    padding: 20px; 
-    margin: 60px; 
-    border-radius: 5px; 
+    background-color: #ffe5e5;
+    padding: 20px;
+    margin: 60px;
+    border-radius: 5px;
     font-family: "Nunito", sans-serif;
 }
 
-.error-message h2, .error-message h3 {
+.error-message h2,
+.error-message h3 {
     color: #d8000c;
 }
 
@@ -19,3 +20,41 @@
     color: #333;
 }
 
+.table-instructions {
+    text-align: center;
+}
+
+.table-instructions h3 {
+    margin-bottom: 100px;
+    width: 100%;
+    background-color: grey;
+    color: white;
+    font-weight: 100;
+    padding: 10px;
+}
+
+.table-instructions h2 {
+    margin-bottom: 10px;
+
+
+}
+
+.table-instructions h4 {
+    max-width: 80%;
+    margin: auto auto 100px auto;
+    color:grey;
+}
+
+.location-button-container {
+    text-align: center;
+    margin-bottom: 200px;
+}
+
+#getLocation {
+    background: #9DBF9E;
+    color: white;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.4rem;
+}

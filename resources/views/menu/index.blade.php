@@ -2,18 +2,6 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< Updated upstream
-<div class="header">
-    <div class="header-content">
-        <h1 class="menu-title">Menu</h1>
-        <div class="cart-container">
-            <span class="shopping-cart-icon" onclick="redirectToCheckout()">&#128722;<span id="cart-count" class="cart-count">0</span></span>
-            <div class="cart-panel"></div>
-        </div>
-    </div>
-</div>
-=======
->>>>>>> Stashed changes
 
 <div class="qr-message">
     QR-code succesvol gescand!
@@ -42,11 +30,6 @@
         </div>
     @endforeach
 </div>
-<<<<<<< Updated upstream
-
-<div class="footer">
-    @terrasje 2024 rechten
-</div>
 
 <script>
     let cart = [];
@@ -72,6 +55,5 @@
         window.location.href = '/menu/afrekenen';
     }
 </script>
-=======
->>>>>>> Stashed changes
+
 @endsection

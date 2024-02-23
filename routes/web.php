@@ -20,13 +20,12 @@ Route::get('/', function () {
 
 // De menu route moet buiten de closure van de hoofdpagina staan.
 Route::get('/menu', [MenuController::class, 'index']);
-<<<<<<< Updated upstream
 
 Route::get('/menu/afrekenen', function () {
     return view('menu.afrekenen');
 });
 
 Route::post('/menu/betalen', [MenuController::class, 'storeOrder']);
-=======
-Route::get('/tafel', [TableController::class, 'index']);
->>>>>>> Stashed changes
+
+Route::get('/tafel/{id}', [TableController::class, 'index']);
+

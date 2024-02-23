@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 /* Extra CSS in public/css/menu.css */
 
 /* Standaard stijlen resetten */
@@ -26,15 +25,7 @@ body, html {
     justify-content: space-between;
     align-items: center;
     padding: 10px 5%;
-=======
-.shopping-cart-icon {
-    cursor: pointer;
-    text-align: right; /* Winkelwagentje naar rechts */
-    font-size: 24px; /* Grootte van het winkelwagen symbool */
-    /* Toevoegen van klikbare link stijlen indien gewenst */
->>>>>>> Stashed changes
 }
-
 .menu-title {
     flex-grow: 1; /* Zorgt ervoor dat het Menu naar links wordt geduwd */
     text-align: left;
