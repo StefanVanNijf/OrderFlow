@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<h3>Tafel {{ $table->id }}</h3>
+<div class="welcome-container">
+    <h3>Tafel {{ $table->id }}</h3>
+    <h2>Welkom bij ons restaurant!</h2>
+</div>
 @livewire('check-location')
 @endsection

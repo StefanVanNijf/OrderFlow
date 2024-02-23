@@ -25,15 +25,6 @@
     </div>
     @else
     @unless($latitude && $longitude)
-    <div class="table-instructions">
-        <ul>
-            <h2>Welkom bij ons restaurant!</h2>
-            <h4>Om te beginnen, zet uw locatie aan en klik op de knop hieronder.</h4>
-        </ul>
-    </div>
-    <!-- <div class="location-button-container">
-        <button id="getLocation">Locatie ophalen</button>
-    </div> -->
     @else
     <div class="error-message">
         <h2>Er ging iets mis..</h2>
@@ -42,9 +33,6 @@
         <p>U heeft geen vpn of andere applicaties die de locatie van uw apparaat kunnen beïnvloeden.</p>
         <p>U heeft locatie ingeschakeld op uw telefoon en/of in de browser.</p>
     </div>
-    <!-- <div class="location-button-container">
-        <button id="getLocation">Opnieuw proberen</button>
-    </div> -->
     @endunless
     @endif
 
@@ -55,7 +43,6 @@
                     @this.setLocation(position.coords.latitude, position.coords.longitude);
                 }, function(error) {
                     console.error("Error: " + error.message);
-                    // Handle location error or show a message to the user
                 });
             } else {
                 alert("Geolocation wordt niet ondersteund door deze browser.");

@@ -1,3 +1,3 @@
 <div class="footer">
-    @terrasje 2024 rechten
+    QR Code Terras 2024 rechten
 </div>
