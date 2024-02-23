@@ -2,6 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
+<<<<<<< Updated upstream
 <div class="header">
     <div class="header-content">
         <h1 class="menu-title">Menu</h1>
@@ -11,6 +12,8 @@
         </div>
     </div>
 </div>
+=======
+>>>>>>> Stashed changes
 
 <div class="qr-message">
     QR-code succesvol gescand!
@@ -39,6 +42,7 @@
         </div>
     @endforeach
 </div>
+<<<<<<< Updated upstream
 
 <div class="footer">
     @terrasje 2024 rechten
@@ -68,4 +72,6 @@
         window.location.href = '/menu/afrekenen';
     }
 </script>
+=======
+>>>>>>> Stashed changes
 @endsection

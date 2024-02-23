@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /* Extra CSS in public/css/menu.css */
 
 /* Standaard stijlen resetten */
@@ -25,6 +26,13 @@ body, html {
     justify-content: space-between;
     align-items: center;
     padding: 10px 5%;
+=======
+.shopping-cart-icon {
+    cursor: pointer;
+    text-align: right; /* Winkelwagentje naar rechts */
+    font-size: 24px; /* Grootte van het winkelwagen symbool */
+    /* Toevoegen van klikbare link stijlen indien gewenst */
+>>>>>>> Stashed changes
 }
 
 .menu-title {
@@ -153,13 +161,4 @@ body, html {
     background-color: #449d44; /* Donkerdere groene kleur voor hover effect */
 }
 
-.footer {
-    background-color: #000;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    font-size: 0.8rem;
-}
+

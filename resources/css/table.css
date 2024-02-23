@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
+.error-message {
+    border: 1px solid #ff0000;
+    background-color: #ffe5e5; 
+    padding: 20px; 
+    margin: 60px; 
+    border-radius: 5px; 
+    font-family: "Nunito", sans-serif;
+}
+
+.error-message h2, .error-message h3 {
+    color: #d8000c;
+}
+
+.error-message p {
+    margin: 10px 0;
+    color: #333;
+}
+
