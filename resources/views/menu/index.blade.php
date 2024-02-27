@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <div class="qr-message">
     QR-code succesvol gescand!
 </div>
@@ -36,27 +35,38 @@
 </div>
 
 <script>
-    let cart = [];
+    let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
 
     function addToCart(item) {
-        cart.push(item);
+        const existingItem = cart.find(cartItem => cartItem.id === item.id);
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            item.quantity = 1;
+            cart.push(item);
+        }
+        sessionStorage.setItem('cart', JSON.stringify(cart));
         updateCartPanel();
         updateCartCount();
     }
 
     function updateCartPanel() {
         const cartPanel = document.querySelector('.cart-panel');
-        cartPanel.innerHTML = cart.map(item => `<div>${item.name} - €${item.price}</div>`).join('');
+        cartPanel.innerHTML = cart.map(item => `<div>${item.name} x ${item.quantity} - €${(item.price * item.quantity).toFixed(2)}</div>`).join('');
     }
 
     function updateCartCount() {
         const cartCount = document.getElementById('cart-count');
-        cartCount.textContent = cart.length;
+        cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
     }
 
     function redirectToCheckout() {
         sessionStorage.setItem('cart', JSON.stringify(cart));
         window.location.href = '/menu/afrekenen';
     }
+
+    // Initial update on page load
+    updateCartPanel();
+    updateCartCount();
 </script>
 @endsection
