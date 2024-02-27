@@ -1,7 +1,7 @@
-{{-- resources/views/menu/index.blade.php --}}
 @extends('layouts.app')
 
 @section('content')
+
 
 <div class="qr-message">
     QR-code succesvol gescand!
@@ -31,6 +31,10 @@
     @endforeach
 </div>
 
+<div class="footer">
+    @terrasje 2024 rechten
+</div>
+
 <script>
     let cart = [];
 
@@ -55,5 +59,4 @@
         window.location.href = '/menu/afrekenen';
     }
 </script>
-
 @endsection
