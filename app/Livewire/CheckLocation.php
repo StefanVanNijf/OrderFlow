@@ -16,9 +16,8 @@ class CheckLocation extends Component
     {
         $this->latitude = $latitude;
         $this->longitude = $longitude;
-
-        $restaurantLat = '51.597588509064444';
-        $restaurantLon = '4.779068255835475';
+        $restaurantLat = '51.606727002717605';
+        $restaurantLon = '4.7784762770543106';
         $radius = 1; // 1 kilometer
 
         if ($this->calculateDistance($this->latitude, $this->longitude, $restaurantLat, $restaurantLon) <= $radius) {
