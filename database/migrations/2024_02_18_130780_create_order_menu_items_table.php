@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('menu_item_id');
             $table->foreign('menu_item_id')->references('id')->on('menu_items')->onDelete('cascade');
+            $table->enum('status', ['processing', 'ready']);
             $table->timestamps();
         });
     }

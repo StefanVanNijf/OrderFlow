@@ -5,5 +5,6 @@
     <h3>Tafel {{ $table->id }}</h3>
     <h2>Welkom bij ons restaurant!</h2>
 </div>
-@livewire('check-location')
+@livewire('check-location', ['tableId' => $table->id])
+
 @endsection

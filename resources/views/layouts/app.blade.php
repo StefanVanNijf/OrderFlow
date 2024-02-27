@@ -22,8 +22,7 @@
     <!-- Hoofdinhoudssectie -->
     <div class="content">
         @yield('content')
-    </div>
-
+    </div> 
     @include('layouts.footer')
 </body>
 </html>

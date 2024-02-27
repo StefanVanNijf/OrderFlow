@@ -11,14 +11,22 @@ class CheckLocation extends Component
     public $longitude;
     public $allowed = false;
     protected $listeners = ['setLocation'];
+    public $tableId;
 
+    public function mount($tableId)
+    {
+        $this->tableId = $tableId;
+        $this->dispatch('saveTableIdToSessionStorage', ['tableId' => $tableId]);
+    }
+    
+    
     public function setLocation($latitude, $longitude)
     {
         $this->latitude = $latitude;
         $this->longitude = $longitude;
         $restaurantLat = '51.606727002717605';
         $restaurantLon = '4.7784762770543106';
-        $radius = 1; // 1 kilometer
+        $radius = 2; // 1 kilometer
 
         if ($this->calculateDistance($this->latitude, $this->longitude, $restaurantLat, $restaurantLon) <= $radius) {
             $this->allowed = true;
