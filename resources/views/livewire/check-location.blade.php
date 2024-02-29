@@ -9,14 +9,16 @@
             <div class="items">
                 @foreach ($category->menuItems as $item)
                 <div class="item">
+                <img src="{{ $item->image }}" alt="{{ $item->name }}" class="menu-item-image">
                     <div class="item-info">
-                        <div class="item-name">{{ $item->name }}</div>
+                    <div class="item-name">{{ $item->name }}</div>
                         <div class="item-description">{{ $item->description }}</div>
-                    </div>
-                    <div class="item-actions">
+                        <div class="item-actions">
                         <div class="item-price">€{{ number_format($item->price, 2) }}</div>
                         <button class="add-item-btn" onclick="addToCart({{ json_encode($item) }})">&#43;</button>
                     </div>
+                    </div>
+                   
                 </div>
                 @endforeach
             </div>

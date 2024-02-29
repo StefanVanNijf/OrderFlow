@@ -14,8 +14,8 @@ class MenuItem extends Model
         return $this->belongsTo(MenuCategory::class);
     }
 
-    public function orderedProducts()
+    public function orderedMenuItems()
     {
-        return $this->hasMany(OrderedProduct::class);
+        return $this->hasMany(OrderMenuItems::class);
     }
 }

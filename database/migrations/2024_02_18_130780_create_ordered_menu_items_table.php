@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ordered_products', function (Blueprint $table) {
+        Schema::create('ordered_menu_items', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('menu_item_id');
             $table->foreign('menu_item_id')->references('id')->on('menu_items')->onDelete('cascade');
             $table->enum('status', ['processing', 'ready']);
+            $table->integer('quantity');
             $table->timestamps();
         });
+        
     }
 
     /**
@@ -25,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ordered_products');
+        Schema::dropIfExists('ordered_menu_items');
     }
 };

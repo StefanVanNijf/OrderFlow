@@ -17,14 +17,17 @@ body, html {
     color: white;
     padding: 20px 0;
     text-align: center;
-    position: relative;
+    top: 0;
+    position: fixed;
 }
-
+.checkout .order-items .item{
+    display: flex!important;
+    flex-direction: row!important;
+}
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 5%;
 }
 .menu-title {
     flex-grow: 1; /* Zorgt ervoor dat het Menu naar links wordt geduwd */
@@ -33,19 +36,19 @@ body, html {
 
 .shopping-cart-icon {
     cursor: pointer;
-    font-size: 24px; /* Grootte van het winkelwagen symbool */
+    font-size: 2rem; /* Grootte van het winkelwagen symbool */
     position: relative; /* Nodig voor de positionering van de cart-panel */
 }
 
 .cart-count {
-    background-color: red;
+    background-color: #0000FF;
     color: white;
-    border-radius: 50%;
-    padding: 0 5px;
-    font-size: 0.7rem;
+    border-radius: 100%;
+    padding: 5px 9px;
+    font-size: 1rem;
     position: absolute;
-    top: -8px;
-    right: -8px;
+    top: -12px;
+    right: -12px;
 }
 
 .cart-container {
@@ -102,13 +105,10 @@ body, html {
 .container {
     max-width: 800px;
     margin: 20px auto;
-    background: #fff;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .category-header {
-    background-color: #eee;
     padding: 5px 15px;
     margin: 10px -20px;
     font-weight: bold;
@@ -116,10 +116,24 @@ body, html {
 
 .item {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #ddd;
     padding: 15px 0;
+}
+.item-info{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 91%;
+}
+img.menu-item-image {
+    width: 100%;
+    border-radius: 65px;
+    height: 140px;
+    margin-bottom: 20px;
+    object-fit: cover;
 }
 
 .item-name {
@@ -134,6 +148,7 @@ body, html {
 .item-price {
     font-weight: bold;
     color: #333;
+    margin-bottom: 20px;
 }
 
 .add-item-btn {
@@ -141,10 +156,9 @@ body, html {
     color: white;
     border: none;
     cursor: pointer;
-    padding: 0px 5px; /* Verhoog de padding voor een grotere knop */
+    padding: 0px 7px; /* Verhoog de padding voor een grotere knop */
     font-size: 1.4rem; /* Vergroot het + teken */
     border-radius: 50%; /* Maakt de knop volledig rond */
-    margin-left: 20px;
     transition: background-color 0.3s ease; /* Voegt een overgangseffect toe */
 }
 

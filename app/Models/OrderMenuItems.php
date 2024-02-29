@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class OrderedProduct extends Model
+class OrderMenuItems extends Model
 {
     use HasFactory;
+
+    protected $table = 'ordered_menu_items';
+
 
     public function order()
     {

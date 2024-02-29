@@ -15,9 +15,9 @@ class Order extends Model
         return $this->belongsTo(Table::class);
     }
 
-    public function orderedProducts()
+    public function orderedMenuItems()
     {
-        return $this->hasMany(OrderedProduct::class);
+        return $this->hasMany(OrderMenuItems::class);
     }
 
     public function monitorItems()
