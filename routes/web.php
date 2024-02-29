@@ -1,7 +1,10 @@
 <?php
+
+use App\Http\Controllers\BestellingController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\TableController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,7 @@ use App\Http\Controllers\TableController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/tafel-overzicht', [BestellingController::class, 'tafelOverzicht']);
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,6 +28,9 @@ Route::get('/menu', [MenuController::class, 'index']);
 Route::get('/menu/afrekenen', function () {
     return view('menu.afrekenen');
 });
+
+
+
 
 Route::post('/menu/betalen', [MenuController::class, 'storeOrder']);
 
