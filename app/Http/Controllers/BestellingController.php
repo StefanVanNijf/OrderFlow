@@ -15,4 +15,10 @@ class BestellingController extends Controller
     
         return view('tafel-overzicht', compact('orders'));
     }
+    public function apiTafelOverzicht()
+{
+    $orders = Order::with(['table', 'orderedMenuItems.menuItem'])->get();
+    return response()->json($orders);
+}
+
 }

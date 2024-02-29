@@ -18,6 +18,9 @@ use App\Http\Controllers\TableController;
 */
 Route::get('/tafel-overzicht', [BestellingController::class, 'tafelOverzicht']);
 
+Route::get('/tafel-overzichtapi', [BestellingController::class, 'apiTafelOverzicht']);
+
+
 Route::get('/', function () {
     return view('welcome');
 });
