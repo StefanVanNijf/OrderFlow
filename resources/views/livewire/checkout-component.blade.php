@@ -26,6 +26,8 @@
                         cartItems: cartItems,
                         tableId: tableId
                     });
+
+                    sessionStorage.removeItem('cart');
                 });
             });
         </script>
