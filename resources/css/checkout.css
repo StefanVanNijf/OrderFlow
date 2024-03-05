@@ -120,6 +120,5 @@ button#submitOrder {
 @media (max-width: 768px) {
     .container {
         width: 90%;
-        padding: 78px 0px 50% 0px;
     }
 }

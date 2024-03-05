@@ -2,8 +2,17 @@
 
 @section('content')
 <div class="welcome-container">
-    <h3>Tafel {{ $table->id }}</h3>
-    <h2>Welkom bij ons restaurant!</h2>
+    <div class="table-details-container">
+    <img class="plate" src="{{ asset('img/plate.svg') }}" alt="Logo" class="logo">
+    <h3 class="table-number">{{ $table->id }}</h3>
+    </div>
+    <div class="menu-navigation-container">
+        <a href="#Voorgerechten">Voorgerechten</a>
+        <a href="#Hoofdgerechten">Hoofdgerechten</a>
+        <a href="#Desserts">Desserts</a>
+        <a href="#Dranken">Dranken</a>
+
+    </div>
 </div>
 @livewire('check-location', ['tableId' => $table->id])
 
