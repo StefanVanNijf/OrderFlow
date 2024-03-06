@@ -7,7 +7,7 @@
         </div>
 
         @else
-        <h2>Je bestelling</h2>
+        <h2>Uw bestelling</h2>
         <div id="order-items" class="checkout order-items">
             <!-- Items zullen hier worden ingevoegd door het JavaScript-script hieronder -->
         </div>

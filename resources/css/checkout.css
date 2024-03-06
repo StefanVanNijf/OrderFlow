@@ -10,6 +10,7 @@
 .container h2 {
     color: #333;
     text-align: center;
+    margin-top: 30px;
     margin-bottom: 30px;
     background-color: none;
 }
@@ -117,8 +118,38 @@ button#submitOrder {
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .container {
-        width: 90%;
+        margin: 20px;
+        padding: 10px;
     }
+
+    .container h2 {
+        margin-top: 100px; /* Behoudt de ruimte aan de bovenkant ook op mobiele apparaten */
+        margin-bottom: 50px; /* Optioneel: Aangepaste ondermarge voor mobiel */
+    }
+
+    .order-items .checkout-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .checkout-item div, .checkout-item button {
+        margin: 5px 0; /* Voegt ruimte toe tussen de items en knoppen op kleinere schermen */
+    }
+
+    button#submitOrder, .checkout-buttons {
+        font-size: 1rem; /* Maakt tekst in knoppen kleiner */
+        padding: 8px 16px; /* Past padding aan voor betere bereikbaarheid */
+    }
+
+    .order-total, .checkout-button button {
+        font-size: 1rem;
+    }
+
+    .alert {
+        font-size: 0.9rem;
+    }
+
+ 
 }
