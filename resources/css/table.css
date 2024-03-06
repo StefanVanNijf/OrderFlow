@@ -21,5 +21,29 @@
 }
 .welcome-container{
 text-align: center;
-padding-top: 90px;
+padding-top: 72px;
+}
+
+.table-details-container {
+    background: #bf0603;
+    padding: 30px;
+}
+.table-details-container img.plate {
+    width: 5rem;
+}
+h3.table-number {
+    position: absolute;
+    top: 13.2%;
+    font-size: 1.4rem;
+    left: 45%;
+    opacity: .7;
+}
+
+.table-details-container h2{
+    color: white;
+    font-weight: 300;
+    padding-bottom: 20px;
+}
+.items {
+    margin-bottom: 86px;
 }

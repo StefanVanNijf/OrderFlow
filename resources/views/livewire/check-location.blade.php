@@ -4,21 +4,21 @@
         @foreach ($categories as $category)
         <div class="category">
             <div class="category-header">
-                <h2>{{ $category->name }}</h2>
+                <h2 id="{{ $category->name }}">{{ $category->name }}</h2>
+            
             </div>
             <div class="items">
                 @foreach ($category->menuItems as $item)
                 <div class="item">
-                <img src="{{ $item->image }}" alt="{{ $item->name }}" class="menu-item-image">
+                    <img src="{{ $item->image }}" alt="{{ $item->name }}" class="menu-item-image">
                     <div class="item-info">
-                    <div class="item-name">{{ $item->name }}</div>
+                        <div class="item-name">{{ $item->name }}</div>
                         <div class="item-description">{{ $item->description }}</div>
                         <div class="item-actions">
-                        <div class="item-price">€{{ number_format($item->price, 2) }}</div>
-                        <button class="add-item-btn" onclick="addToCart({{ json_encode($item) }})">&#43;</button>
+                            <div class="item-price">€{{ number_format($item->price, 2) }}</div>
+                            <button class="add-item-btn" onclick="addToCart({{ json_encode($item) }})">&#43;</button>
+                        </div>
                     </div>
-                    </div>
-                   
                 </div>
                 @endforeach
             </div>
@@ -52,61 +52,58 @@
         });
     </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        window.addEventListener('saveTableIdToSessionStorage', event => {
-            var tableId = event.detail[0].tableId;
-            sessionStorage.setItem('tableId', tableId);
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.addEventListener('saveTableIdToSessionStorage', event => {
+                var tableId = event.detail[0].tableId;
+                sessionStorage.setItem('tableId', tableId);
+            });
         });
-    });
-</script>
-<div class="cart-panel">
-    <!-- Cart items will be displayed here -->
-</div>
- 
-<div id="cart-count">0</div>
- 
-<script>
-    let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
- 
-    function addToCart(item) {
-        const existingItem = cart.find(cartItem => cartItem.id === item.id);
-        if (existingItem) {
-            existingItem.quantity += 1;
-        } else {
-            item.quantity = 1;
-            cart.push(item);
-        }
-        sessionStorage.setItem('cart', JSON.stringify(cart));
-        updateCartPanel();
-        updateCartCount();
-    }
- 
-    function updateCartPanel() {
-        const cartPanel = document.querySelector('.cart-panel');
-        cartPanel.innerHTML = cart.map(item => `<div>${item.name} x ${item.quantity} - €${(item.price * item.quantity).toFixed(2)}</div>`).join('');
-    }
- 
-    function updateCartCount() {
-        const cartCount = document.getElementById('cart-count');
-        cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
-    }
- 
-    function redirectToCheckout() {
-        sessionStorage.setItem('cart', JSON.stringify(cart));
-        window.location.href = '/menu/afrekenen';
-    }
- 
-    // Initial update on page load
-    updateCartPanel();
-    updateCartCount();
- 
-    document.addEventListener('livewire:load', function() {
-        Livewire.on('cartUpdated', () => {
-            cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+    </script>
+    <div class="cart-panel">
+    </div>
+
+    <script>
+        let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+
+        function addToCart(item) {
+            const existingItem = cart.find(cartItem => cartItem.id === item.id);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                item.quantity = 1;
+                cart.push(item);
+            }
+            sessionStorage.setItem('cart', JSON.stringify(cart));
             updateCartPanel();
             updateCartCount();
+        }
+
+        function updateCartPanel() {
+            const cartPanel = document.querySelector('.cart-panel');
+            cartPanel.innerHTML = cart.map(item => `<div>${item.name} x ${item.quantity} - €${(item.price * item.quantity).toFixed(2)}</div>`).join('');
+        }
+
+        function updateCartCount() {
+            const cartCount = document.getElementById('cart-count');
+            cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+        }
+
+        function redirectToCheckout() {
+            sessionStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = '/menu/afrekenen';
+        }
+
+        // Initial update on page load
+        updateCartPanel();
+        updateCartCount();
+
+        document.addEventListener('livewire:load', function() {
+            Livewire.on('cartUpdated', () => {
+                cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+                updateCartPanel();
+                updateCartCount();
+            });
         });
-    });
-</script>
+    </script>
 </div>
