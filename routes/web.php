@@ -22,7 +22,7 @@ Route::get('/tafel-overzichtapi', [BestellingController::class, 'apiTafelOverzic
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 // De menu route moet buiten de closure van de hoofdpagina staan.
