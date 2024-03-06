@@ -22,6 +22,4 @@ function fetchTafels() {
 setInterval(fetchTafels, 5000);
 
 </script>
-
-
 @endsection
