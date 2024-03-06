@@ -9,6 +9,7 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/css/menu.css', 'resources/css/checkout.css'])
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/css/table.css'])
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/css/home.css'])
     
 
 </head>
