@@ -8,7 +8,7 @@
                     <li>{{ $item }}</li>
                     @endforeach
                 </ul>
-             <button>Meer bestellen</button>
+                <button onclick="history.go(-2);">Meer bestellen</button>
             </div>
 
             @else
