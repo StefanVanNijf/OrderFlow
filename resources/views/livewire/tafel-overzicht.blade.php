@@ -1,10 +1,7 @@
 <div wire:poll.5s class="container">
-
     @foreach ($orders as $order)
-        <div class="order">
-            <a href="{{ route('order.items', ['orderId' => $order->id]) }}">
-                <h3>Tafel {{ $order->table->id }} - Status: {{ $order->order_status }}</h3>
-            </a>
+        <a href="{{ route('order.items', ['orderId' => $order->id]) }}" class="order">
+            <h3>Tafel {{ $order->table->id }} - Status: {{ $order->order_status }}</h3>
             <ul>
                 @foreach ($order->orderedMenuItems as $item)
                     <li>
@@ -19,6 +16,6 @@
                     </li>
                 @endforeach
             </ul>
-        </div>
+        </a>
     @endforeach
 </div>

@@ -2,7 +2,7 @@
 
 @section('content')
 
- <div class="container">
+    <div class="container">
         <div class="order">
             <h3>Tafel {{ $order->table->id }} - Status: {{ $order->order_status }}</h3>
             <div class="food-list">
@@ -33,7 +33,7 @@
             </div>
 
             <!-- Use the existing "Submit" button to handle form submission -->
-            <form action="{{ route('send.out', ['orderId' => $order->id]) }}" method="post" id="orderForm">
+            <form action="{{ route('set.order.ready', ['orderId' => $order->id]) }}" method="post" id="orderForm">
                 @csrf
                 @method('post')
                 <button type="button" id="submitBtn" onclick="submitForm()">Send out</button>

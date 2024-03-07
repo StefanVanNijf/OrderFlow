@@ -106,9 +106,11 @@
                         itemElement.innerHTML = `
                     <div>${item.name} x ${item.quantity}</div>
                     <div>€${(item.price * item.quantity).toFixed(2)}</div>
-                    <button class="subtract-quantity" data-index="${index}">-</button>
-                    <button class="add-quantity" data-index="${index}">+</button>
-                    <button class="remove-item" data-index="${index}">🗑</button>
+                    <div class="checkout-buttons-container">
+                        <button class="checkout-buttons subtract-quantity" data-index="${index}">-</button>
+                        <button class="checkout-buttons add-quantity" data-index="${index}">+</button>
+                        <button class="checkout-buttons remove-item" data-index="${index}">🗑</button>
+                        </div>
                 `;
                         orderItemsContainer.appendChild(itemElement);
                         totalPrice += item.price * item.quantity;
