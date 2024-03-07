@@ -11,7 +11,6 @@
         <a href="#Hoofdgerechten">Hoofdgerechten</a>
         <a href="#Desserts">Desserts</a>
         <a href="#Dranken">Dranken</a>
-
     </div>
 </div>
 @livewire('check-location', ['tableId' => $table->id])
