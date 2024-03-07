@@ -25,7 +25,7 @@ class CheckoutComponent extends Component
             $order->save(); // Save to get the ID for foreign key
 
             foreach ($MenuItemsArray as $menuItem) {
-                // Create and save ordered menu items for the order
+                // Create and save ordered menu     items for the order
                 $orderedMenuItem = new OrderMenuItems();
                 $orderedMenuItem->menu_item_id = $menuItem['id'];
                 $orderedMenuItem->quantity = $menuItem['quantity'];

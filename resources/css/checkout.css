@@ -91,13 +91,7 @@ button#submitOrder {
 .alert-success {
     background-color: white; /* Slightly lighter green variation for success */
 }
-.container button{
-    padding: 10px 40px;
-    font-size: 1rem;
-    border: none;
-    background: black;
-    color: white;
-}
+
 
 .container ul{
     margin-bottom: 40px;
@@ -140,7 +134,13 @@ button#submitOrder {
         padding: 10px;
         margin: 100px 0px;
     }
-
+    .alert-success button{
+        padding: 10px 40px;
+        font-size: 1rem;
+        border: none;
+        background: black;
+        color: white;
+    }
     .container h2 {
         margin-top: 100px; /* Behoudt de ruimte aan de bovenkant ook op mobiele apparaten */
         margin-bottom: 50px; /* Optioneel: Aangepaste ondermarge voor mobiel */
