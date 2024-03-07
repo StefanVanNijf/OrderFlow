@@ -178,3 +178,13 @@ img.menu-item-image {
     color: white;
     text-decoration: none;
 }
+.flash-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    z-index: 9999;
+}
