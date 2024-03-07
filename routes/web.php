@@ -16,7 +16,12 @@ use App\Http\Controllers\TableController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/tafel-overzicht', [BestellingController::class, 'tafelOverzicht']);
+Route::get('/tafel-overzicht', [BestellingController::class, 'tafelOverzicht'])->name('tafelOverzicht');
+Route::get('/tafel-overzicht/{orderId}', [BestellingController::class, 'showItems'])->name('order.items');
+Route::post('/set-order-ready/{orderId}', [BestellingController::class, 'setOrderReady'])->name('set.order.ready');
+Route::delete('/delete-order/{orderId}', [BestellingController::class, 'deleteOrder'])->name('delete.order');
+
+
 
 Route::get('/tafel-overzichtapi', [BestellingController::class, 'apiTafelOverzicht']);
 
@@ -31,8 +36,6 @@ Route::get('/menu', [MenuController::class, 'index']);
 Route::get('/menu/afrekenen', function () {
     return view('menu.afrekenen');
 });
-
-
 
 
 Route::post('/menu/betalen', [MenuController::class, 'storeOrder']);

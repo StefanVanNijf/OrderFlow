@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('table_id');
             $table->foreign('table_id')->references('id')->on('tables')->onDelete('cascade');
-            $table->enum('order_status', ['pending', 'processed']);
+            $table->enum('order_status', ['Pending', 'Processed', 'Ready']);
             $table->timestamps();
         });
     }
