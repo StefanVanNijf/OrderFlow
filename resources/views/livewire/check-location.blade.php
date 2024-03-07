@@ -67,18 +67,32 @@
         let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
 
         function addToCart(item) {
-            const existingItem = cart.find(cartItem => cartItem.id === item.id);
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                item.quantity = 1;
-                cart.push(item);
-            }
-            sessionStorage.setItem('cart', JSON.stringify(cart));
-            updateCartPanel();
-            updateCartCount();
+        const existingItem = cart.find(cartItem => cartItem.id === item.id);
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            item.quantity = 1;
+            cart.push(item);
         }
+        sessionStorage.setItem('cart', JSON.stringify(cart));
+        updateCartPanel();
+        updateCartCount();
+        
+        // Toon een flashmelding
+        showFlashMessage(`${item.name} is toegevoegd aan de winkelwagen.`);
+    }
 
+    function showFlashMessage(message) {
+        const flashMessage = document.createElement('div');
+        flashMessage.classList.add('flash-message');
+        flashMessage.textContent = message;
+        document.body.appendChild(flashMessage);
+
+        // Laat de flashmelding na 5 seconden verdwijnen
+        setTimeout(() => {
+            flashMessage.remove();
+        }, 5000);
+    }
         function updateCartPanel() {
             const cartPanel = document.querySelector('.cart-panel');
             cartPanel.innerHTML = cart.map(item => `<div>${item.name} x ${item.quantity} - €${(item.price * item.quantity).toFixed(2)}</div>`).join('');
