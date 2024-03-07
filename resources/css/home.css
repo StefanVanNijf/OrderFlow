@@ -1,77 +1,148 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
+/* resources/css/home.css */
+
+.home-container {
+  width: 100%;
+  height: auto;
+  
 }
 
-header {
-    background: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+.hero-section {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Donkere overlay om tekst beter leesbaar te maken */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 10px;
+.hero-content {
+  text-align: center;
+  color: #fff;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
+.hero-content h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
 }
 
-section {
-    padding: 20px;
-    text-align: center;
+.hero-content p {
+  font-size: 1.5em;
+  margin-bottom: 1em;
 }
 
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+.btn-primary {
+  background-color: #e0a800; /* Of een andere opvallende kleur */
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
 }
 
-/* Voeg smooth scrolling toe voor een betere ervaring */
-html {
-    scroll-behavior: smooth;
+.qr-instructions {
+  padding: 50px 0;
+  text-align: center;
+  background: #fff; /* Of een lichte kleur voor het contrast */
 }
 
-/* Sticky navbar */
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.qr-instructions-content h2 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-/* Eenvoudige fade-in animatie voor secties */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.qr-instructions-content p {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 20px;
 }
 
-section {
-    animation: fadeIn 1s ease-out;
+.qr-code-instruction-image {
+  max-width: 200px;
+  margin: auto;
 }
 
-/* Hover effecten voor links */
-nav ul li a:hover {
-    color: #eaeaea;
-    text-decoration: underline;
+/* Voeg media queries toe om responsiviteit te garanderen */
+@media (max-width: 768px) {
+  .hero-content h1 {
+      font-size: 2em; /* Kleinere tekst voor kleinere schermen */
+      margin-bottom: 0.3em;
+  }
+
+  .hero-content p {
+      font-size: 1em;
+      margin-bottom: 0.5em;
+  }
+
+  .btn-primary {
+      padding: 8px 16px; /* Kleinere knoppen */
+  }
+
+  .qr-instructions-content h2 {
+      font-size: 2em;
+  }
+
+  .qr-instructions-content p,
+  .qr-instructions-step {
+      font-size: 0.9em;
+  }
+
+  .qr-code-instruction-image {
+      max-width: 150px;
+  }
 }
+
+/* Media query voor mobiele telefoons */
+@media (max-width: 480px) {
+  .hero-section {
+      height: auto; /* Hoogte aanpassen voor mobiele weergave */
+  }
+
+  .hero-content {
+      padding: 20px; /* Voeg padding toe zodat het niet tegen de randen zit */
+  }
+
+  .hero-content h1 {
+      font-size: 1.5em;
+  }
+
+  .hero-content p {
+      font-size: 0.8em;
+  }
+
+  .btn-primary {
+      font-size: 0.8em; /* Maak de tekst op de knop kleiner */
+  }
+
+  .home-container{
+    margin-top: 76px;
+  }
+  .qr-instructions {
+      padding: 20px 0;
+  }
+
+  .qr-instructions-content h2 {
+      font-size: 1.5em;
+  }
+
+  .qr-instructions-content p,
+  .qr-instructions-step {
+      font-size: 0.8em;
+  }
+
+  .qr-code-instruction-image {
+      max-width: 120px; /* Maak de QR-code afbeelding kleiner op mobiele apparaten */
+  }
+
+  /* Pas de lay-out van de navigatie en andere elementen indien nodig aan */
+}
+
 
