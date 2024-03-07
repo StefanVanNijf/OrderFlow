@@ -80,8 +80,8 @@ button#submitOrder {
 }
 .alert {
     padding: 20px;
-    background-color: #4CAF50; /* Green */
-    color: white;
+    background-color: white; /* Green */
+    color: black;
     margin-bottom: 15px;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
@@ -89,9 +89,23 @@ button#submitOrder {
 }
 
 .alert-success {
-    background-color: #5cb85c; /* Slightly lighter green variation for success */
+    background-color: white; /* Slightly lighter green variation for success */
+}
+.container button{
+    padding: 10px 40px;
+    font-size: 1rem;
+    border: none;
+    background: black;
+    color: white;
 }
 
+.container ul{
+    margin-bottom: 40px;
+    list-style: none;
+}
+.container li{
+    padding-top: 20px;
+}
 .alert-close {
     margin-left: 15px;
     color: white;
@@ -124,6 +138,7 @@ button#submitOrder {
     .container {
         margin: 20px;
         padding: 10px;
+        margin: 100px 0px;
     }
 
     .container h2 {
@@ -150,8 +165,8 @@ button#submitOrder {
     }
 
     .alert {
-        font-size: 0.9rem;
+        font-size: 1.3rem;
+        text-align: center;
     }
-
  
 }
