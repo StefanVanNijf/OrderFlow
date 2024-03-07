@@ -57,4 +57,13 @@ class BestellingController extends Controller
             return redirect()->route('tafelOverzicht')->with('error', 'Order cannot be deleted. Status is not "Ready".');
         }
     }
+    public function sendOut($orderId)
+    {
+        // Hier kun je de logica toevoegen om de bestelling te verzenden
+        // bijvoorbeeld het updaten van de status van de bestelling naar "verzonden"
+        Order::destroy($orderId);
+
+        // Vervolgens kun je de gebruiker doorverwijzen naar een andere pagina of een bericht tonen
+        return redirect()->route('tafelOverzicht')->with('success', 'Order has been sent out successfully.');
+    }
 }
