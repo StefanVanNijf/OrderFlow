@@ -18,7 +18,7 @@ use App\Http\Controllers\TableController;
 */
 Route::get('/tafel-overzicht', [BestellingController::class, 'tafelOverzicht'])->name('tafelOverzicht');
 Route::get('/tafel-overzicht/{orderId}', [BestellingController::class, 'showItems'])->name('order.items');
-Route::post('/orders/{orderId}/send-out', [BestellingController::class, 'sendOut'])->name('send.out');
+Route::post('/orders/{orderId}/send-out', [BestellingController::class, 'sendOut'])->name('set.order.ready');
 
 Route::delete('/delete-order/{orderId}', [BestellingController::class, 'deleteOrder'])->name('delete.order');
 
